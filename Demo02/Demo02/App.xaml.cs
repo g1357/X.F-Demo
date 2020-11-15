@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo02.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,8 @@ namespace Demo02
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            MainPage = new GroupedListView();
         }
 
         protected override void OnStart()
