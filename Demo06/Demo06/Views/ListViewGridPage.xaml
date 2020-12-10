@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Demo06.Models"
+             x:Class="Demo06.Views.ListViewGridPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <ListView CachingStrategy="RecycleElement">
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type models:Item}" >
+                        <models:Item>
+                            <models:Item.Data1>Строка №1</models:Item.Data1>
+                            <models:Item.Data2>Первая сторока</models:Item.Data2>
+                        </models:Item>
+                        <models:Item>
+                            <models:Item.Data1>Строка №2</models:Item.Data1>
+                            <models:Item.Data2>Вторая сторока</models:Item.Data2>
+                        </models:Item>
+                        <models:Item>
+                            <models:Item.Data1>Строка №3</models:Item.Data1>
+                            <models:Item.Data2>Третья сторока</models:Item.Data2>
+                        </models:Item>
+                        <models:Item>
+                            <models:Item.Data1>Строка №4</models:Item.Data1>
+                            <models:Item.Data2>Четвертая сторока</models:Item.Data2>
+                        </models:Item>
+                        <models:Item>
+                            <models:Item.Data1>Строка №5</models:Item.Data1>
+                            <models:Item.Data2>Пятая сторока</models:Item.Data2>
+                        </models:Item>
+                    </x:Array>
+                </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                                    <Label Text="{Binding Data1}" />
+                                    <Label Text="{Binding Data2}" Grid.Row="1" />
+                            <!--
+                                <Label Text="{Binding Data1}" />
+                                <Label Text="{Binding Data2}" Grid.Column="1"/>
+                                <Label Text="{Binding Data1}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="{Binding Data2}" Grid.Row="1" />
+                            -->
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
