@@ -36,7 +36,9 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                        <Grid Padding="10">
+                        <StackLayout Orientation="Horizontal" >
+                            <!--
+                       <Grid Padding="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="3*" />
                                 <ColumnDefinition Width="1*" />
@@ -47,13 +49,21 @@
                             </Grid.RowDefinitions>
                                     <Label Text="{Binding Data1}" />
                                     <Label Text="{Binding Data2}" Grid.Row="1" />
-                            <!--
                                 <Label Text="{Binding Data1}" />
                                 <Label Text="{Binding Data2}" Grid.Column="1"/>
                                 <Label Text="{Binding Data1}" Grid.Row="1" Grid.Column="1"/>
                                 <Label Text="{Binding Data2}" Grid.Row="1" />
-                            -->
                             </Grid>
+                             -->
+                            <StackLayout WidthRequest="200">
+                                <Label Text="{Binding Data1}" />
+                                <Label Text="{Binding Data2}" />
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="{Binding Data1}" />
+                                <Label Text="{Binding Data2}" />
+                            </StackLayout>
+                        </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

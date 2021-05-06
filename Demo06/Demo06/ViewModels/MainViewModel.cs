@@ -29,6 +29,11 @@ namespace Demo06.ViewModels
             await _page.Navigation.PushAsync(new ListViewGridPage());
             Message = "Было выбрано |ListViewGrid Page.";
         });
+        public ICommand ListView1Command => new Command(async () =>
+        {
+            await _page.Navigation.PushAsync(new ListView1Page());
+            Message = "Было выбрано |ListViewGrid Page.";
+        });
 
         public MainViewModel(Page page)
         {
